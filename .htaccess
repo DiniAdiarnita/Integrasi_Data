@@ -1,0 +1,22 @@
+# =================================================================== #
+# note
+# =================================================================== #
+# Foldername can be change what you need
+# change Pages too if you change your Pages folder
+# Custom 404 Not Found Error Page
+# get ErrorDocument directory from your Error Pages on Pages folder
+# delete "#" to turn on your error Pages
+# =================================================================== #
+# End Notes
+# =================================================================== #
+
+Options -Indexes
+RewriteEngine On
+RewriteBase /INTA_10/Pages
+RewriteCond %{KWU_2} !^([^\.]+)$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$  $1.php [NC,L]
+
+# ErrorDocument 403 http://localhost/INTA_10/Error_Pages/403 
+# ErrorDocument 404 http://localhost/INTA_10/Error_Pages/404
